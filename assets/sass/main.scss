@@ -1,0 +1,668 @@
+@import "variables";
+@import "mixins";
+@import "reset";
+
+.top-img {
+  width: 100%;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+
+  @include response-to(small) {
+    height: 274px;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include response-to(huge) {
+    max-width: 700px;
+  }
+}
+
+.header  {
+  margin-bottom: 80px;
+  padding: 0 16px;
+
+  @include response-to(small) {
+    margin-bottom: 24px;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__data {
+
+      &_top {
+        font-size: 14px;
+        line-height: 20px;
+        color: #999;
+        margin-bottom: -2px;
+      }
+
+      &_bottom {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &__date {
+      font-size: 18px;
+      line-height: 32px;
+      color: #999;
+
+      @include response-to(small) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.content {
+
+  &__item {
+    margin-bottom: 48px;
+
+    @include response-to(small) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    padding: 0 16px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 32px;
+
+    @include response-to(small) {
+      padding: 0 24px;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 16px;
+    }
+
+    &.first {
+      padding-left: 80px;
+      position: relative;
+
+      @include response-to(small) {
+        padding-left: 24px;
+      }
+
+      &:first-letter {
+        font-size: 0;
+
+        @include response-to(small) {
+          font-size: 14px;
+        }
+      }
+
+      &:before {
+        content: 'e';
+        text-transform: uppercase;
+        position: absolute;
+        left: 14px;
+        top: -20px;
+        font-size: 80px;
+        line-height: 94px;
+
+        @include response-to(small) {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &__caption {
+    padding: 0 16px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 16px;
+
+    @include response-to(small) {
+      padding: 0 24px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    @include flex-center();
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.page-content {
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__left,
+  &__right {
+    position: absolute;
+    width: calc(((100% - 900px) / 2));
+    top: 114px;
+    bottom: 0;
+
+    @include response-to(huge) {
+      width: calc(((100% - 700px) / 2));
+    }
+
+    @include response-to(large) {
+      width: 250px;
+    }
+
+    @include response-to(medium) {
+      display: none;
+    }
+
+    &_content {
+      position: sticky;
+      top: 30px;
+    }
+  }
+
+  &__left {
+    left: 0;
+    padding: 0 32px;
+
+    @include response-to(large) {
+      bottom: 370px;
+    }
+    
+    &_content {
+      left: 0;
+    }
+
+    &_title {
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: 23px;
+      text-transform: uppercase;
+    }
+
+    &_item {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
+      color: #999;
+      cursor: pointer;
+      @include transition-ease;
+
+      &:hover,
+      &.active {
+        color: #05B9FF;
+      }
+    }
+
+    &_share {
+      padding-top: 15px;
+      border-top: 1px solid #EDEDED;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      .copy {
+        position: relative;
+        @include transition-ease;
+
+        &:before {
+          position: absolute;
+          background-color: #fff;
+          border: 1px solid #EDEDED;
+          border-radius: 3px;
+          content: 'copied';
+          padding: 3px 5px;
+          color: #05B9FF;
+          z-index: -1;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: block;
+          white-space: nowrap;
+          user-select: none;
+          opacity: 0;
+        }
+
+        &.copied {
+
+          &:before {
+            opacity: 1;
+            z-index: 10;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    right: 0;
+    padding: 0 32px;
+
+    @include response-to(large) {
+      right: unset;
+      left: 0;
+      top: 600px;
+      bottom: 20px;
+    }
+
+    &_content {
+      right: 0;
+
+      @include response-to(large) {
+        right: unset;
+        left: 0;
+        top: 480px;
+      }
+    }
+
+    &_img {
+      @include flex-center();
+      width: 100%;
+      margin-bottom: 16px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &_title {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    &_btn {
+      background: #05B9FF;
+      border: 1px solid #05B9FF;
+      border-radius: 4px;
+      @include transition-ease;
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      padding: 12px 0;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      
+      &:hover {
+        color: #05B9FF;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__center {
+    margin-top: -89px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 32px;
+    position: relative;
+
+    @include response-to(large) {
+      max-width: calc(100% - 32px - 250px);
+      margin-right: 32px;
+      margin-left: auto;
+    }
+
+    @include response-to(medium) {
+      max-width: unset;
+      margin-right: 0;
+      margin-left: 0;
+      margin-top: 0;
+    }
+
+    @include response-to(small) {
+      padding: 15px 0;
+    }
+
+    &:before {
+      content: 'Wellness Daily';
+      background: #80AB53;
+      position: absolute;
+      border-radius: 4px 4px 0 0;
+      color: #fff;
+      font-size: 32px;
+      line-height: 40px;
+      padding: 10px;
+      left: 32px;
+      bottom: 100%;
+      display: block;
+      width: fit-content;
+
+      @include response-to(small) {
+        font-size: 20px;
+        line-height: 24px;
+        padding: 10px 0;
+        text-align: center;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    line-height: 56px;
+    margin-bottom: 24px;
+
+    @include response-to(small) {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.product {
+
+  @include response-to(small) {
+    margin-top: 48px;
+    padding: 0 24px;
+  }
+
+  &_note {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #999;
+    padding: 0 16px;
+
+    @include response-to(small) {
+      padding: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    padding: 0 16px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 24px;
+
+    @include response-to(small) {
+      padding: 0;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 117px;
+
+    @include response-to(small) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__img {
+    width: 293px;
+    height: 293px;
+    flex-shrink: 0;
+    @include flex-center();
+    overflow: hidden;
+
+    @include response-to(small) {
+      width: 209px;
+      height: 209px;
+      margin: 0 auto;
+    }
+
+    &.pc {
+
+      @include response-to(small) {
+        display: none;
+      }
+    }
+
+    &.mob {
+      display: none;
+
+      @include response-to(small) {
+        display: flex;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    width: 100%;
+
+    &_vendor {
+      font-size: 14px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+
+      @include response-to(small) {
+        display: none;
+      }
+
+      .bold {
+        font-weight: 600;
+      }
+    }
+
+    &_rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      @include response-to(small) {
+        margin-bottom: 24px;
+      }
+    }
+
+    &_stars {
+      margin-right: 16px;
+
+      @include response-to(small) {
+        width: 112px;
+        height: auto;
+      }
+    }
+
+    &_reviews {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+
+      @include response-to(small) {
+        font-size: 12px;
+      }
+    }
+
+    &_effects {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+
+      @include response-to(small) {
+        display: none;
+      }
+    }
+
+    &_effect {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type) {
+        margin-right: 23px;
+      }
+
+      &-img {
+        margin-right: 8px;
+      }
+
+      &-text {
+        font-size: 16px;
+        line-height: 20px;
+        color: #999;
+      }
+    }
+
+    &_desc {
+      font-size: 16px;
+      line-height: 20px;
+
+      @include response-to(small) {
+        display: none;
+      }
+    }
+
+    &_footer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+
+      @include response-to(small) {
+        display: block;
+        margin-top: 24px;
+      }
+    }
+
+    &_coast {
+      display: flex;
+      align-items: flex-end;
+
+      @include response-to(small) {
+        margin: 0 auto 24px;
+        width: fit-content;
+        align-items: center;
+      }
+    }
+
+    &_sale {
+      text-decoration: line-through;
+      font-size: 20px;
+      line-height: 23px;
+      color: #999;
+      margin-right: 8px;
+      margin-bottom: 5px;
+
+      @include response-to(small) {
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 0;
+        margin-top: 3px;
+      }
+    }
+
+    &_value {
+      font-size: 32px;
+      line-height: 40px;
+
+      @include response-to(small) {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    &_btn {
+      display: block;
+      width: fit-content;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      @include transition-ease;
+      padding: 12px 61px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      border: 1px solid #05B9FF;
+      border-radius: 4px;
+      background-color: #05B9FF;
+
+      @include response-to(small) {
+        margin: 0 auto;
+      }
+      
+      &:hover {
+        background-color: #fff;
+        color: #05B9FF;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #ECECEC;
+  padding: 94px 0 84px;
+
+  @include response-to(small) {
+    padding: 44px 0;
+  }
+
+  &__text {
+    padding: 0 34px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-transform: uppercase;
+
+    @include response-to(small) {
+      padding: 0 24px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
