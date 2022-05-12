@@ -666,3 +666,68 @@
     }
   }
 }
+
+.mobile-offer {
+  display: none;
+  align-items: center;
+  padding: 3px 0;
+  margin-left: 50px;
+
+  @include response-to(small) {
+    display: flex;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    @include flex-center();
+    margin-right: 35px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__coast {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__sale {
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: line-through;
+    color: #999;
+    margin-right: 8px;
+  }
+
+  &__value {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__btn {
+    display: block;
+    width: fit-content;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    @include transition-ease;
+    padding: 7px 31px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid #05B9FF;
+    border-radius: 4px;
+    background-color: #05B9FF;
+
+    @include response-to(small) {
+      margin: 0 auto;
+    }
+  }
+}

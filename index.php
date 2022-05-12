@@ -271,6 +271,24 @@ $product_settings = array(
             PHYSICIAN BEFORE STARTING ANY DIET, EXERCISE PROGRAM OR TAKING ANY DIET PILL TO AVOID ANY HEALTH ISSUES.</p>
     </div>
 </footer>
+<div class='mobile-offer'>
+    <figure class='mobile-offer__img'>
+        <img src='<?php echo $product_settings['image_url']?>'
+             loading='lazy'
+             alt='img'>
+    </figure>
+    <div class='mobile-offer__info'>
+        <div class='mobile-offer__coast'>
+            <p class='mobile-offer__sale'>
+                <?php echo sprintf('%s €', $product_settings['coast']); ?>
+            </p>
+            <p class='mobile-offer__value'>
+                <?php echo sprintf('%s €', $product_settings['coast_sale']); ?>
+            </p>
+        </div>
+        <a href='<?php echo $product_settings['buy_now_link']?>' class='mobile-offer__btn'>buy now</a>
+    </div>
+</div>
 <script src='./assets/script.js'></script>
 </body>
 </html>
