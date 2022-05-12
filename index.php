@@ -1,5 +1,12 @@
 <?php
 $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$product_settings = array(
+    'coast' => 129.90,
+    'coast_sale' => 106.90,
+    'buy_now_link' => '#',
+    'image_url' => './assets/images/product.png',
+)
 ?>
 
 <!DOCTYPE html>
@@ -96,12 +103,12 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     <div class='page-content__right'>
         <div class='page-content__right_content'>
             <figure class='page-content__right_img'>
-                <img src='./assets/images/product.png' alt='img'>
+                <img src='<?php echo $product_settings['image_url'] ?>' alt='img'>
             </figure>
             <p class='page-content__right_title'>Hempura Precision
                 <br>CBD Sport
                 <br>for Athletes</p>
-            <a href='#' class='page-content__right_btn'>try now</a>
+            <a href='<?php echo $product_settings['buy_now_link']?>' class='page-content__right_btn'>try now</a>
         </div>
     </div>
     <article class='container page-content__center'>
@@ -122,7 +129,8 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         </div>
         <div class='content'>
             <div class='content__item'>
-                <p class='content__text first'>Everyone can use CBD safely and effectively; from the daily walker, to the
+                <p class='content__text first'>Everyone can use CBD safely and effectively; from the daily walker, to
+                    the
                     occasional runner, to the true weekend warrior, to the pro-athlete.</p>
                 <p class='content__text'>Sports leagues are starting to consider cannabis because cannabidiol (CBD), one
                     of the prevalent cannabinoids in cannabis, can help athletic performance, as well as recovery from
@@ -188,7 +196,8 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             </div>
             <div class='product'>
                 <p class='product_note'>Try this</p>
-                <p class='product__title'>Hempura Precision CBD Sport for Athletes – Pure 3000mg Orange Flavoured CBD Oil (30ml)</p>
+                <p class='product__title'>Hempura Precision CBD Sport for Athletes – Pure 3000mg Orange Flavoured CBD
+                    Oil (30ml)</p>
                 <div class='product__content'>
                     <figure class='product__img pc'>
                         <img src='./assets/images/product.png'
@@ -205,7 +214,7 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <p class='product__info_reviews'>5.0 | 37 Reviews</p>
                         </div>
                         <figure class='product__img mob'>
-                            <img src='./assets/images/product.png'
+                            <img src='<?php echo $product_settings['image_url']?>'
                                  alt='img'
                                  loading='lazy'>
                         </figure>
@@ -230,10 +239,14 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <br>• Perfect performance partner</p>
                         <div class='product__info_footer'>
                             <div class='product__info_coast'>
-                                <p class='product__info_sale'>129.90 €</p>
-                                <p class='product__info_value'>106.90 €</p>
+                                <p class='product__info_sale'>
+                                    <?php echo sprintf('%s €', $product_settings['coast']); ?>
+                                </p>
+                                <p class='product__info_value'>
+                                    <?php echo sprintf('%s €', $product_settings['coast_sale']); ?>
+                                </p>
                             </div>
-                            <a href='#' class='product__info_btn'>buy now</a>
+                            <a href='<?php echo $product_settings['buy_now_link']?>' class='product__info_btn'>buy now</a>
                         </div>
                     </div>
                 </div>
