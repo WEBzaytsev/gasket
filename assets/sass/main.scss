@@ -670,8 +670,13 @@
 .mobile-offer {
   display: none;
   align-items: center;
-  padding: 3px 0;
-  margin-left: 50px;
+  padding: 5px 0 3px 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  left: 0;
+  border-top: 1px solid #ECECEC;
 
   @include response-to(small) {
     display: flex;
