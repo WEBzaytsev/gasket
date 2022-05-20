@@ -104,6 +104,14 @@ window.addEventListener('resize', () => {
     }
 })();
 
+(function() {
+    const certificate = document.querySelector('.certificate__img') || null;
+
+    if (!certificate) return;
+
+    $('[data-fancybox="gallery"]').fancybox();
+})();
+
 function checkWidth() {
     return mobileWidth > document.documentElement.clientWidth;
 }

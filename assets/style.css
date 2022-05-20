@@ -391,7 +391,7 @@ body {
 }
 .page-content__center:before {
   content: "Wellness Daily";
-  background: #80AB53;
+  background: #8ECE4B;
   position: absolute;
   border-radius: 4px 4px 0 0;
   color: #fff;
@@ -467,7 +467,7 @@ body {
 .product__content {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 117px;
+  margin-bottom: 84px;
 }
 @media (max-width: 767px) {
   .product__content {
@@ -678,13 +678,55 @@ body {
   color: #05B9FF;
 }
 
+.certificate {
+  margin-bottom: 51px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.certificate__img {
+  display: block;
+  flex: 0 0 354px;
+  margin-right: 79px;
+}
+@media (max-width: 1200px) {
+  .certificate__img {
+    margin-right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .certificate__img {
+    flex: 0 0 240px;
+    margin: 0 auto;
+  }
+}
+.certificate__img img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .certificate__info {
+    display: none;
+  }
+}
+.certificate__text {
+  padding-top: 16px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.certificate__text:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
 .footer {
   background-color: #ECECEC;
   padding: 94px 0 84px;
 }
 @media (max-width: 767px) {
   .footer {
-    padding: 44px 0;
+    padding: 44px 0 130px;
   }
 }
 .footer__text {

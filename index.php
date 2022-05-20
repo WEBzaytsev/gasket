@@ -22,6 +22,8 @@ $product_settings = array(
     <link
         href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap'
         rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/libs/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="./assets/libs/fancybox/jquery.fancybox.css">
     <link rel='stylesheet' href='./assets/style.css'>
 
 </head>
@@ -244,6 +246,17 @@ $product_settings = array(
                     </div>
                 </div>
             </div>
+            <div class='certificate'>
+                <a href='./assets/images/certificate-big.png'
+                   data-fancybox="gallery"
+                   class='certificate__img'>
+                    <img src='./assets/images/certificate.png' alt='img'>
+                </a>
+                <div class='certificate__info'>
+                    <p class='certificate__text'>Certificate number</p>
+                    <p class='certificate__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
         </div>
     </article>
 </div>
@@ -275,6 +288,12 @@ $product_settings = array(
         <a href='<?php echo $product_settings['buy_now_link']?>' class='mobile-offer__btn'>I want it!</a>
     </div>
 </div>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+<script src="./assets/libs/jquery-ui/jquery-ui.js"></script>
+<script src="./assets/libs/fancybox/jquery.fancybox.min.js"></script>
 <script src='./assets/script.js'></script>
 </body>
 </html>
