@@ -238,15 +238,8 @@ $product_settings = array(
                             <br>• Absolute zero THC – sport safe!
                             <br>• Perfect performance partner</p>
                         <div class='product__info_footer'>
-                            <div class='product__info_coast'>
-                                <p class='product__info_sale'>
-                                    <?php echo sprintf('%s €', $product_settings['coast']); ?>
-                                </p>
-                                <p class='product__info_value'>
-                                    <?php echo sprintf('%s €', $product_settings['coast_sale']); ?>
-                                </p>
-                            </div>
-                            <a href='<?php echo $product_settings['buy_now_link']?>' class='product__info_btn'>buy now</a>
+                            <p class='product__info_footer-mob-text'>unique sport product</p>
+                            <a href='<?php echo $product_settings['buy_now_link']?>' class='product__info_btn'>I want it!</a>
                         </div>
                     </div>
                 </div>
@@ -278,15 +271,8 @@ $product_settings = array(
              alt='img'>
     </figure>
     <div class='mobile-offer__info'>
-        <div class='mobile-offer__coast'>
-            <p class='mobile-offer__sale'>
-                <?php echo sprintf('%s €', $product_settings['coast']); ?>
-            </p>
-            <p class='mobile-offer__value'>
-                <?php echo sprintf('%s €', $product_settings['coast_sale']); ?>
-            </p>
-        </div>
-        <a href='<?php echo $product_settings['buy_now_link']?>' class='mobile-offer__btn'>buy now</a>
+        <p class='mobile-offer__info_text'>unique sport product</p>
+        <a href='<?php echo $product_settings['buy_now_link']?>' class='mobile-offer__btn'>I want it!</a>
     </div>
 </div>
 <script src='./assets/script.js'></script>
