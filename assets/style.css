@@ -688,17 +688,11 @@ body {
 .certificate__img {
   display: block;
   flex: 0 0 354px;
-  margin-right: 79px;
-}
-@media (max-width: 1200px) {
-  .certificate__img {
-    margin-right: 24px;
-  }
+  margin: 0 auto;
 }
 @media (max-width: 767px) {
   .certificate__img {
     flex: 0 0 240px;
-    margin: 0 auto;
   }
 }
 .certificate__img img {

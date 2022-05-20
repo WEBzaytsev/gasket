@@ -666,15 +666,10 @@
   &__img {
     display: block;
     flex: 0 0 354px;
-    margin-right: 79px;
-
-    @include response-to(large) {
-      margin-right: 24px;
-    }
+    margin: 0 auto;
 
     @include response-to(small) {
       flex: 0 0 240px;
-      margin: 0 auto;
     }
 
     img {
