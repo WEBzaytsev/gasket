@@ -4,7 +4,7 @@ $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $product_settings = array(
     'coast' => 129.90,
     'coast_sale' => 106.90,
-    'buy_now_link' => 'https://getcannab.com/product/precision-cbd-sport-pure-3000mg-orange-flavoured-cbd-oil-30ml/',
+    'buy_now_link' => 'https://getcannab.com/product/precision-cbd-sport-pure-3000mg-orange-flavoured-cbd-oil-30ml/?add-to-cart=7223',
     'image_url' => './assets/images/product.png',
 )
 ?>
